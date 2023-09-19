@@ -1,0 +1,35 @@
+.scrolling {
+  overflow: hidden;
+  overflow-y: visible;
+  height: 100%;
+  scrollbar-track-color: teal;
+}
+
+.scrolling::-webkit-scrollbar {
+  width: 5px;
+}
+
+.scrolling::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 4px;
+}
+
+.scrolling::-webkit-scrollbar-thumb {
+  background: #1f242d;
+  border-radius: 4px;
+}
+
+.yt-container {
+  position: relative !important;
+  width: 100% !important;
+  height: 0 !important;
+  padding-bottom: 56.25% !important;
+}
+
+.video {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}

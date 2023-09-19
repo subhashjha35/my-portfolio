@@ -1,0 +1,62 @@
+<div class="container align-middle">
+  <div class="row text-center pt-5">
+    <div class="col-md-6 order-md-2">
+      <div class="picture-box">
+        <img class="img" src="/assets/img/me.jpg" alt="subhash.jpg" />
+      </div>
+      <h1>
+        I
+        <span class="typed"></span>
+      </h1>
+      <p style="font-size: large">
+        Enthusiastic about new technologies 😍
+      </p>
+      <pre>
+        Let's connect.
+      </pre>
+      <div id="social-media">
+        <a *ngFor="let sm of socialMediaList; let i = index" [href]="sm.link" target="_blank" class="social ml-2 mr-2"
+          (mouseleave)="hover=-1" (mouseenter)="handleHoverOnSocialMedia(i)">
+          <i [class]="sm.class" [ngStyle]="hover === i ? { color: sm.color }: null"></i>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-3 custom-panel order-md-1">
+      <div>
+        <div *ngIf="myGithubProfile as profile">
+
+          <a [href]="profile.html_url">
+            <div>
+              <i class="fab fa-github fa-4x"></i>
+            </div>
+            {{ profile.name }}
+          </a>
+          <div>
+            <a [href]="'https://github.com/'+company" *ngFor="let company of profile.company.split('@').join('').split(' ')">
+              @{{ company }}
+            </a>
+          </div>
+          <div class="mt-2 mb-4">
+            <i class="fab fa-angular fa-2x"></i>
+            <i class="fab fa-html5 fa-2x"></i>
+            <i class="fab fa-css3 fa-2x"></i>
+            <i class="fab fa-js fa-2x"></i>
+            <i class="fab fa-c fa-2x"></i>
+          </div>
+          <p>{{ profile.bio }}</p>
+          <div>Followers: <a [href]="profile.followers_url">{{ profile.followers }}</a></div>
+          <div>Following: <a [href]="profile.following_url">{{ profile.following }}</a></div>
+          <div>Repositories: <a [href]="profile.html_url+'?tab=repositories'">{{ profile.public_repos }}</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 custom-panel order-md-3">
+      <h3>
+        Projects
+      </h3>
+      
+    </div>
+  </div>
+
+
+</div>
