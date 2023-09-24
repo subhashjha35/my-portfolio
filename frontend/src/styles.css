@@ -28,6 +28,6 @@ background-color: #fafafa;
 position: absolute;
 }
 
-a:hover {
+a {
   text-decoration: none;
 }

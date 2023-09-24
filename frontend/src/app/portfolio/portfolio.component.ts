@@ -1,7 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
-import * as Typed from 'typed.js';
 
 import { DevToApiService } from '../services/dev-to.service';
 import { GithubApiService } from '../services/github.service';
@@ -40,25 +39,5 @@ export class PortfolioComponent implements OnInit {
     if (this._router.url == '/') {
       $('.particles-js-canvas-el').css('visibility', 'visible');
     }
-    let trackClass: string;
-
-    if (this._router.url == '/') {
-      $('.particles-js-canvas-el').css('visibility', 'visible');
-    }
-
-    let options = {
-      strings: [
-        'am a Frontend Developer.',
-        'use Angular for building applications',
-        'love writing maintainable code',
-      ],
-      typeSpeed: 50,
-      backSpeed: 3,
-      showCursor: true,
-      cursorChar: '/',
-      loop: true,
-    };
-    // @ts-ignore
-    let typed = new Typed('.typed', options);
   }
 }

@@ -5,17 +5,13 @@
         <img class="img" src="/assets/img/me.jpg" alt="subhash.jpg" />
       </div>
       <h1>
-        I
-        <span class="typed"></span>
+        Subhash Jha
       </h1>
       <p style="font-size: large">
         Enthusiastic about new technologies 😍
       </p>
-      <pre>
-        Let's connect.
-      </pre>
       <div id="social-media">
-        <a *ngFor="let sm of socialMediaList; let i = index" [href]="sm.link" target="_blank" class="social ml-2 mr-2"
+        <a *ngFor="let sm of socialMediaList; let i = index" [href]="sm.link" target="_blank" class="social ms-2"
           (mouseleave)="hover=-1" (mouseenter)="handleHoverOnSocialMedia(i)">
           <i [class]="sm.class" [ngStyle]="hover === i ? { color: sm.color }: null"></i>
         </a>
@@ -50,13 +46,13 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 custom-panel order-md-3 mt-xs-2" *ngIf="devToArticles">
+    <div class="col-md-3 custom-panel order-md-3 mt-xs-2">
       <a [href]="'https://dev.to/subhashjha35'" target="_blank">
         <div>
           <i class="fab fa-dev fa-4x"></i>
         </div>
       </a>
-      <div>
+      <div *ngIf="devToArticles.length; else noArticles">
         <div *ngFor="let article of devToArticles">
           <a [href]="article.url" target="_blank">{{ article.title }}</a>
           <div>
@@ -65,6 +61,17 @@
           </div>
         </div>
       </div>
+      <ng-template #noArticles>
+        <div *ngFor="let i of [1,2,3]" class="placeholder-glow">
+          <div class="placeholder placeholder-xs">
+            Custom Pipes in Angular:
+          </div>
+          <div class="placeholder placeholder-xs">
+            Data Transformation and Presentation
+          </div>
+          <div class="placeholder placeholder-xs">(3 mins)</div>
+        </div>
+      </ng-template>
     </div>
   </div>
 
