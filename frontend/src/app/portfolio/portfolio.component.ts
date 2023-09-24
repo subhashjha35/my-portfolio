@@ -6,6 +6,8 @@ import * as Typed from 'typed.js';
 import { socialMediaArray } from '../shared/constants/links.constant';
 import { GithubApiService } from '../services/github.service';
 import { GithubProfile, RepositoryResponse } from '../types/github.types';
+import { DevToApiService } from '../services/dev-to.service';
+import { DevToArticles } from '../types/dev-to.types';
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',
@@ -14,11 +16,14 @@ import { GithubProfile, RepositoryResponse } from '../types/github.types';
 export class PortfolioComponent implements OnInit {
 
   githubApiService = inject(GithubApiService);
+  devToApiService = inject(DevToApiService);
   private _router = inject(Router);
 
   githubRepositories: RepositoryResponse = [];
 
   myGithubProfile: GithubProfile | undefined;
+
+  devToArticles: DevToArticles = [];
 
   hover: number = -1;
   socialMediaList = socialMediaArray;
@@ -29,6 +34,8 @@ export class PortfolioComponent implements OnInit {
 
   ngOnInit() {
     this.githubApiService.getMyProfile().subscribe((profile)=> this.myGithubProfile = profile);
+
+    this.devToApiService.getUserArticles().subscribe((articles) => this.devToArticles = articles);
 
     if (this._router.url == '/') {
       $('.particles-js-canvas-el').css('visibility', 'visible');
