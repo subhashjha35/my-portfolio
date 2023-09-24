@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import * as $ from 'jquery';
 import * as Typed from 'typed.js';
 
-import { socialMediaArray } from '../shared/constants/links.constant';
-import { GithubApiService } from '../services/github.service';
-import { GithubProfile, RepositoryResponse } from '../types/github.types';
 import { DevToApiService } from '../services/dev-to.service';
+import { GithubApiService } from '../services/github.service';
+import { socialMediaArray } from '../shared/constants/links.constant';
 import { DevToArticles } from '../types/dev-to.types';
+import { GithubProfile, RepositoryResponse } from '../types/github.types';
 @Component({
   selector: 'app-portfolio',
   templateUrl: './portfolio.component.html',

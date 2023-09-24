@@ -50,11 +50,21 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3 custom-panel order-md-3">
-      <h3>
-        Dev To
-      </h3>
-      <pre>{{ devToArticles | json }}</pre>
+    <div class="col-md-3 custom-panel order-md-3 mt-xs-2" *ngIf="devToArticles">
+      <a [href]="'https://dev.to/subhashjha35'" target="_blank">
+        <div>
+          <i class="fab fa-dev fa-4x"></i>
+        </div>
+      </a>
+      <div>
+        <div *ngFor="let article of devToArticles">
+          <a [href]="article.url" target="_blank">{{ article.title }}</a>
+          <div>
+            ({{ article.reading_time_minutes }}
+            {{ article.reading_time_minutes > 1 ? 'mins': 'min' }})
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
