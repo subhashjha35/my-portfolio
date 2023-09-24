@@ -30,9 +30,9 @@ export const socialMediaArray = [
       color: "#1877F2" // Placeholder color
   },
   {
-      name: "Instagram",
-      link: "https://www.instagram.com/subhashjha35",
-      class: "fab fa-instagram fa-2x",
-      color: "#BC2A8D" // Placeholder color
+      name: "Gmail",
+      link: "mailto:subhashjha35@gmail.com",
+      class: "fab fa-google fa-2x",
+      color: "#3E65CF" // Placeholder color
   }
 ];
