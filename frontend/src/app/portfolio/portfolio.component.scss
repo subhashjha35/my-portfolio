@@ -43,3 +43,11 @@
     mix-blend-mode: multiply;
   }
 }
+
+.github_stats {
+  .rows {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

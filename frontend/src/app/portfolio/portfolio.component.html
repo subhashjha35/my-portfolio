@@ -40,9 +40,20 @@
             <i class="fab fa-c fa-2x"></i>
           </div>
           <p>{{ profile.bio }}</p>
-          <div>Followers: <a [href]="profile.followers_url">{{ profile.followers }}</a></div>
-          <div>Following: <a [href]="profile.following_url">{{ profile.following }}</a></div>
-          <div>Repositories: <a [href]="profile.html_url+'?tab=repositories'">{{ profile.public_repos }}</a></div>
+          <div class="github_stats">
+            <div class="rows">
+              <div>Followers:</div>
+              <div><a [href]="profile.html_url+'?tab=followers'" target="_blank">{{ profile.followers }}</a></div>
+            </div>
+            <div class="rows">
+              <div>Following:</div>
+              <div><a [href]="profile.html_url+'?tab=following'" target="_blank">{{ profile.following }}</a></div>
+            </div>
+            <div class="rows">
+              <div>Repositories:</div>
+              <div><a [href]="profile.html_url+'?tab=repositories'" target="_blank">{{ profile.public_repos }}</a></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
