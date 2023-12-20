@@ -1,10 +1,23 @@
 import dotenv from 'dotenv';
 import express, { Express, Request, Response } from 'express';
 
+import cors, { CorsOptions } from 'cors';
 import { DevToArticles } from '../types/dev-to.types';
 dotenv.config();
 
 const app: Express = express();
+
+var corsOptions: CorsOptions = {
+  origin: [
+    'http://localhost:4200',
+    'https://www.subhashjha.com',
+    'https://subhashjha.com',
+    'https://my-portfolio-pi-rosy-18.vercel.app'
+  ],
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions))
 
 app.get('/api/devto/articles/me', async (_req: Request, res: Response) => {
   const data = await fetchDevToArticles();
