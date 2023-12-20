@@ -11,10 +11,6 @@ app.get('/api/devto/articles/me', async (_req: Request, res: Response) => {
   res.json(data);
 });
 
-app.listen(3000, (): void => {
-  // tslint:disable-next-line:no-console
-  console.log(`⚡️[server]: Server is running at http://localhost:3000`);
-});
 
 const fetchDevToArticles = async (): Promise<DevToArticles> => {
   return fetch(
@@ -23,3 +19,8 @@ const fetchDevToArticles = async (): Promise<DevToArticles> => {
   )
     .then(data => data.json())
 }
+
+app.listen(3000, (): void => {
+  // tslint:disable-next-line:no-console
+  console.log(`⚡️[server]: Server is running at http://localhost:3000`);
+});
