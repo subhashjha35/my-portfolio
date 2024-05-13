@@ -33,3 +33,19 @@ export interface User {
   profile_image: string
   profile_image_90: string
 }
+
+
+export type Response<T = any> = {
+  result: T,
+  length: number
+}
+
+export const gitRepos: Response<{ name: string }> = {
+  length: 34,
+  result: { name: 'abc' }
+}
+
+export const getRepos = <T>(name: T): { length: number; repos: T[] } => ({
+  length: 12,
+  repos: [],
+})
